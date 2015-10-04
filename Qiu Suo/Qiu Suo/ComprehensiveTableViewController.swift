@@ -65,8 +65,6 @@ class ComprehensiveTableViewController: UITableViewController, MBProgressHUDDele
         self.navigationController?.navigationBar.translucent = false
         
         self.clearsSelectionOnViewWillAppear = true
- 
-        let nib = UINib(nibName: "TWTableViewCell", bundle: nil)
         
         //pull to refresh
         let refreshCtrl = UIRefreshControl()
@@ -107,8 +105,8 @@ class ComprehensiveTableViewController: UITableViewController, MBProgressHUDDele
         
         //latest
         Alamofire.request(.GET, "https://www.v2ex.com/api/topics/latest.json")
-            .responseJSON { (req, res, json, error)in
-                if(error != nil) {
+            .responseJSON { (req, res, result)in
+                if(result.isFailure) {
                     NSLog("Fail to load data.")
                     //need to clear cause maybe the data is not integrate
 //                    self.latestPostItems.removeAll(keepCapacity: true)
@@ -116,9 +114,9 @@ class ComprehensiveTableViewController: UITableViewController, MBProgressHUDDele
                     self.hud?.hide(true)
                 }
                 else {
-                    let json = JSON(json!)
-                    for (index: String, subJson: JSON) in json {
-                        let postItem: PostItem = self.constructPostItem(subJson)
+                    let json = JSON(result.value!)
+                    for subJson in json {
+                        let postItem: PostItem = self.constructPostItem(subJson.1)
                         
                         //
                         self.latestPostItems.append(postItem)
@@ -134,16 +132,15 @@ class ComprehensiveTableViewController: UITableViewController, MBProgressHUDDele
         
         //hot
         Alamofire.request(.GET, "https://www.v2ex.com/api/topics/hot.json")
-            .responseJSON { (req, res, json, error)in
-                if(error != nil) {
+            .responseJSON { (req, res, result)in
+                if(result.isFailure) {
                     NSLog("Fail to load data.")
-                    
                     self.hud?.hide(true)
                 }
                 else {
-                    let json = JSON(json!)
-                    for (index: String, subJson: JSON) in json {
-                        let postItem: PostItem = self.constructPostItem(subJson)
+                    let json = JSON(result.value!)
+                    for subJson in json {
+                        let postItem: PostItem = self.constructPostItem(subJson.1)
                         self.hotPostItems.append(postItem)
                     }
                     //no need to reload, cause toggle segment control will reload
@@ -152,15 +149,15 @@ class ComprehensiveTableViewController: UITableViewController, MBProgressHUDDele
         }
         
         //recent
-        Alamofire.request(.GET, "http://www.v2ex.com/recent")
-            .responseString { (req, res, string, error)in
-                if(error != nil) {
+        Alamofire.request(.GET, "https://www.v2ex.com/recent")
+            .responseString { (req, res, result)in
+                if(result.isFailure) {
                     NSLog("Fail to load data.")
                     self.hud?.hide(true)
                 }
                 else {
                     
-                    self.parseHtmlString(string)
+                    self.parseHtmlString(result.value)
                     
                     //no need to reload, cause toggle segment control will reload
                     self.tableView3!.separatorStyle = UITableViewCellSeparatorStyle.SingleLine
@@ -196,7 +193,7 @@ class ComprehensiveTableViewController: UITableViewController, MBProgressHUDDele
             url = "https://www.v2ex.com/api/topics/hot.json"
             break;
         case 2:
-            url = "http://www.v2ex.com/recent"
+            url = "https://www.v2ex.com/recent"
             break;
         default:
             break;
@@ -204,8 +201,8 @@ class ComprehensiveTableViewController: UITableViewController, MBProgressHUDDele
         
         Alamofire.request(.GET, url)
             //for latest and hot tab
-            .responseJSON { (req, res, json, error)in
-                if(error != nil) {
+            .responseJSON { (req, res, result) in
+                if(result.isFailure) {
                     NSLog("Fail to refresh data.")
                     self.refreshControl?.endRefreshing()
                     //no need to set line separator to none, cause keep current ones
@@ -217,9 +214,9 @@ class ComprehensiveTableViewController: UITableViewController, MBProgressHUDDele
                     if self.segmentIndex == 0 {
                         self.latestPostItems.removeAll(keepCapacity: true)
         
-                        let json = JSON(json!)
-                        for (index: String, subJson: JSON) in json {
-                            let postItem: PostItem = self.constructPostItem(subJson)
+                        let json = JSON(result.value!)
+                        for subJson in json {
+                            let postItem: PostItem = self.constructPostItem(subJson.1)
         
                             self.latestPostItems.append(postItem)
                         }
@@ -227,9 +224,9 @@ class ComprehensiveTableViewController: UITableViewController, MBProgressHUDDele
                     else if self.segmentIndex == 1{
                         self.hotPostItems.removeAll(keepCapacity: true)
         
-                        let json = JSON(json!)
-                        for (index: String, subJson: JSON) in json {
-                            let postItem: PostItem = self.constructPostItem(subJson)
+                        let json = JSON(result.value!)
+                        for subJson in json {
+                            let postItem: PostItem = self.constructPostItem(subJson.1)
         
                             self.hotPostItems.append(postItem)
                         }
@@ -242,8 +239,8 @@ class ComprehensiveTableViewController: UITableViewController, MBProgressHUDDele
                 }
             }
             //for recent tab
-            .responseString{ (_, _, string, error) -> Void in
-                if(error != nil) {
+            .responseString{ (_, _, result) -> Void in
+                if(result.isFailure) {
                     NSLog("Fail to refresh data.")
                     self.refreshControl?.endRefreshing()
                     //no need to set line separator to none, cause keep current ones
@@ -253,7 +250,7 @@ class ComprehensiveTableViewController: UITableViewController, MBProgressHUDDele
                     if self.segmentIndex == 2 {
                         
                         self.recentPostItems.removeAll(keepCapacity: true)
-                        self.parseHtmlString(string)
+                        self.parseHtmlString(result.value)
                         
                         self.tableView.reloadData()
                         self.tableView.separatorStyle = UITableViewCellSeparatorStyle.SingleLine
@@ -294,17 +291,30 @@ class ComprehensiveTableViewController: UITableViewController, MBProgressHUDDele
             if self.segmentIndex == 0 {
                 cell.userName.text = latestPostItems[indexPath.row].userName
                 cell.userPost.text = latestPostItems[indexPath.row].postTitle
-                cell.userAvatar.kf_setImageWithURL(latestPostItems[indexPath.row].userAvatar!)
+                
+                //use https to load avatar
+                let avatarUrl = latestPostItems[indexPath.row].userAvatar!
+                var s = avatarUrl.URLString
+                s.insert("s", atIndex: s.startIndex.advancedBy(4))
+                cell.userAvatar.kf_setImageWithURL(NSURL(string: s)!)
             }
             else if self.segmentIndex == 1 {
                 cell.userName.text = hotPostItems[indexPath.row].userName
                 cell.userPost.text = hotPostItems[indexPath.row].postTitle
-                cell.userAvatar.kf_setImageWithURL(hotPostItems[indexPath.row].userAvatar!)
+                
+                let avatarUrl = hotPostItems[indexPath.row].userAvatar!
+                var s = avatarUrl.URLString
+                s.insert("s", atIndex: s.startIndex.advancedBy(4))
+                cell.userAvatar.kf_setImageWithURL(NSURL(string: s)!)
             }
             else if self.segmentIndex == 2 {
                 cell.userName.text = recentPostItems[indexPath.row].userName
                 cell.userPost.text = recentPostItems[indexPath.row].postTitle
-                cell.userAvatar.kf_setImageWithURL(recentPostItems[indexPath.row].userAvatar!)
+                
+                let avatarUrl = recentPostItems[indexPath.row].userAvatar!
+                var s = avatarUrl.URLString
+                s.insert("s", atIndex: s.startIndex.advancedBy(4))
+                cell.userAvatar.kf_setImageWithURL(NSURL(string: s)!)
             }
             
             return cell

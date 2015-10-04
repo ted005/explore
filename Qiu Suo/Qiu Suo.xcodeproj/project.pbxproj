@@ -13,7 +13,6 @@
 		DC665C141BC0BEE4007BE181 /* TWThemesPostsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC665C121BC0BEE4007BE181 /* TWThemesPostsTableViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		DCA6C3D31BC0AF2400A0F4AC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA6C3D21BC0AF2400A0F4AC /* AppDelegate.swift */; };
 		DCA6C3D51BC0AF2400A0F4AC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA6C3D41BC0AF2400A0F4AC /* ViewController.swift */; };
-		DCA6C3D81BC0AF2400A0F4AC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DCA6C3D61BC0AF2400A0F4AC /* Main.storyboard */; };
 		DCA6C3DA1BC0AF2400A0F4AC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DCA6C3D91BC0AF2400A0F4AC /* Assets.xcassets */; };
 		DCA6C3DD1BC0AF2400A0F4AC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DCA6C3DB1BC0AF2400A0F4AC /* LaunchScreen.storyboard */; };
 		DCA6C3E81BC0AF2400A0F4AC /* Qiu_SuoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA6C3E71BC0AF2400A0F4AC /* Qiu_SuoTests.swift */; };
@@ -36,6 +35,13 @@
 		DCD140381BC0D1C30037AA9A /* TFHpple.m in Sources */ = {isa = PBXBuildFile; fileRef = DCD140331BC0D1C30037AA9A /* TFHpple.m */; settings = {ASSET_TAGS = (); }; };
 		DCD140391BC0D1C30037AA9A /* TFHppleElement.m in Sources */ = {isa = PBXBuildFile; fileRef = DCD140351BC0D1C30037AA9A /* TFHppleElement.m */; settings = {ASSET_TAGS = (); }; };
 		DCD1403A1BC0D1C30037AA9A /* XPathQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = DCD140371BC0D1C30037AA9A /* XPathQuery.m */; settings = {ASSET_TAGS = (); }; };
+		DCD1403F1BC160D20037AA9A /* TWExploreCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD1403C1BC160D20037AA9A /* TWExploreCollectionViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		DCD140401BC160D20037AA9A /* TWExplorePostsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD1403D1BC160D20037AA9A /* TWExplorePostsTableViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		DCD140411BC160D20037AA9A /* TWNodeSearchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD1403E1BC160D20037AA9A /* TWNodeSearchTableViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		DCD140461BC160E80037AA9A /* TWSettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD140431BC160E80037AA9A /* TWSettingsTableViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		DCD140471BC160E80037AA9A /* TWLicenseListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD140441BC160E80037AA9A /* TWLicenseListTableViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		DCD140481BC160E80037AA9A /* TWLicenseDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD140451BC160E80037AA9A /* TWLicenseDetailViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		DCD1404A1BC161130037AA9A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DCD140491BC161130037AA9A /* Main.storyboard */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,7 +71,6 @@
 		DCA6C3CF1BC0AF2400A0F4AC /* Qiu Suo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Qiu Suo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DCA6C3D21BC0AF2400A0F4AC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DCA6C3D41BC0AF2400A0F4AC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		DCA6C3D71BC0AF2400A0F4AC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DCA6C3D91BC0AF2400A0F4AC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DCA6C3DC1BC0AF2400A0F4AC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DCA6C3DE1BC0AF2400A0F4AC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -97,6 +102,13 @@
 		DCD140351BC0D1C30037AA9A /* TFHppleElement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFHppleElement.m; sourceTree = "<group>"; };
 		DCD140361BC0D1C30037AA9A /* XPathQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XPathQuery.h; sourceTree = "<group>"; };
 		DCD140371BC0D1C30037AA9A /* XPathQuery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XPathQuery.m; sourceTree = "<group>"; };
+		DCD1403C1BC160D20037AA9A /* TWExploreCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TWExploreCollectionViewController.swift; sourceTree = "<group>"; };
+		DCD1403D1BC160D20037AA9A /* TWExplorePostsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TWExplorePostsTableViewController.swift; sourceTree = "<group>"; };
+		DCD1403E1BC160D20037AA9A /* TWNodeSearchTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TWNodeSearchTableViewController.swift; sourceTree = "<group>"; };
+		DCD140431BC160E80037AA9A /* TWSettingsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TWSettingsTableViewController.swift; sourceTree = "<group>"; };
+		DCD140441BC160E80037AA9A /* TWLicenseListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TWLicenseListTableViewController.swift; sourceTree = "<group>"; };
+		DCD140451BC160E80037AA9A /* TWLicenseDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TWLicenseDetailViewController.swift; sourceTree = "<group>"; };
+		DCD140491BC161130037AA9A /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -193,6 +205,8 @@
 		DCA6C3D11BC0AF2400A0F4AC /* Qiu Suo */ = {
 			isa = PBXGroup;
 			children = (
+				DCD140421BC160DE0037AA9A /* About */,
+				DCD1403B1BC160C00037AA9A /* Explore */,
 				DCD140291BC0C5C20037AA9A /* ComprehensiveTableViewController.swift */,
 				DCD1402A1BC0C5C20037AA9A /* TWDetailTableViewController.swift */,
 				DCD1402B1BC0C5C20037AA9A /* ExploreThemes.plist */,
@@ -201,10 +215,10 @@
 				DC665C101BC0BED2007BE181 /* Themes */,
 				DCA6C3D21BC0AF2400A0F4AC /* AppDelegate.swift */,
 				DCA6C3D41BC0AF2400A0F4AC /* ViewController.swift */,
-				DCA6C3D61BC0AF2400A0F4AC /* Main.storyboard */,
 				DCA6C3D91BC0AF2400A0F4AC /* Assets.xcassets */,
 				DCA6C3DB1BC0AF2400A0F4AC /* LaunchScreen.storyboard */,
 				DCA6C3DE1BC0AF2400A0F4AC /* Info.plist */,
+				DCD140491BC161130037AA9A /* Main.storyboard */,
 			);
 			path = "Qiu Suo";
 			sourceTree = "<group>";
@@ -251,6 +265,26 @@
 				DCD1401E1BC0C5460037AA9A /* TWHeaderCollectionReusableView.xib */,
 			);
 			name = Cell;
+			sourceTree = "<group>";
+		};
+		DCD1403B1BC160C00037AA9A /* Explore */ = {
+			isa = PBXGroup;
+			children = (
+				DCD1403C1BC160D20037AA9A /* TWExploreCollectionViewController.swift */,
+				DCD1403D1BC160D20037AA9A /* TWExplorePostsTableViewController.swift */,
+				DCD1403E1BC160D20037AA9A /* TWNodeSearchTableViewController.swift */,
+			);
+			name = Explore;
+			sourceTree = "<group>";
+		};
+		DCD140421BC160DE0037AA9A /* About */ = {
+			isa = PBXGroup;
+			children = (
+				DCD140431BC160E80037AA9A /* TWSettingsTableViewController.swift */,
+				DCD140441BC160E80037AA9A /* TWLicenseListTableViewController.swift */,
+				DCD140451BC160E80037AA9A /* TWLicenseDetailViewController.swift */,
+			);
+			name = About;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -366,9 +400,9 @@
 				DCD1402E1BC0C5C20037AA9A /* ExploreThemes.plist in Resources */,
 				DCD140221BC0C5460037AA9A /* TWDetailTableViewCell.xib in Resources */,
 				DCD140261BC0C5460037AA9A /* TWNodeCollectionViewCell.xib in Resources */,
+				DCD1404A1BC161130037AA9A /* Main.storyboard in Resources */,
 				DCD140281BC0C5460037AA9A /* TWHeaderCollectionReusableView.xib in Resources */,
 				DCD140201BC0C5460037AA9A /* TWTableViewCell.xib in Resources */,
-				DCA6C3D81BC0AF2400A0F4AC /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -443,18 +477,24 @@
 			files = (
 				DC665C131BC0BEE4007BE181 /* TWThemesTableViewController.swift in Sources */,
 				DCD140131BC0C51C0037AA9A /* TWNode.swift in Sources */,
+				DCD140411BC160D20037AA9A /* TWNodeSearchTableViewController.swift in Sources */,
 				DCD1403A1BC0D1C30037AA9A /* XPathQuery.m in Sources */,
 				DCD140231BC0C5460037AA9A /* TWLZTableViewCell.swift in Sources */,
 				DCD140381BC0D1C30037AA9A /* TFHpple.m in Sources */,
 				DCD1402D1BC0C5C20037AA9A /* TWDetailTableViewController.swift in Sources */,
 				DCD140271BC0C5460037AA9A /* TWHeaderCollectionReusableView.swift in Sources */,
+				DCD140481BC160E80037AA9A /* TWLicenseDetailViewController.swift in Sources */,
 				DCA6C3D51BC0AF2400A0F4AC /* ViewController.swift in Sources */,
 				DCD1401F1BC0C5460037AA9A /* TWTableViewCell.swift in Sources */,
 				DCD1402C1BC0C5C20037AA9A /* ComprehensiveTableViewController.swift in Sources */,
+				DCD140401BC160D20037AA9A /* TWExplorePostsTableViewController.swift in Sources */,
 				DCD140391BC0D1C30037AA9A /* TFHppleElement.m in Sources */,
 				DCD140211BC0C5460037AA9A /* TWDetailTableViewCell.swift in Sources */,
 				DCA6C3D31BC0AF2400A0F4AC /* AppDelegate.swift in Sources */,
 				DCD140121BC0C51C0037AA9A /* PostItem.swift in Sources */,
+				DCD1403F1BC160D20037AA9A /* TWExploreCollectionViewController.swift in Sources */,
+				DCD140461BC160E80037AA9A /* TWSettingsTableViewController.swift in Sources */,
+				DCD140471BC160E80037AA9A /* TWLicenseListTableViewController.swift in Sources */,
 				DCD140251BC0C5460037AA9A /* TWNodeCollectionViewCell.swift in Sources */,
 				DC665C141BC0BEE4007BE181 /* TWThemesPostsTableViewController.swift in Sources */,
 			);
@@ -492,14 +532,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		DCA6C3D61BC0AF2400A0F4AC /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				DCA6C3D71BC0AF2400A0F4AC /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		DCA6C3DB1BC0AF2400A0F4AC /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

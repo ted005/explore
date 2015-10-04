@@ -15,7 +15,7 @@ class TWThemesPostsTableViewController: UITableViewController, MBProgressHUDDele
 
     var postItems: [PostItem] = []
     
-    let urlPrefix = "http://www.v2ex.com/?tab="
+    let urlPrefix = "https://www.v2ex.com/?tab="
     
     var theme = ""
     
@@ -65,9 +65,9 @@ class TWThemesPostsTableViewController: UITableViewController, MBProgressHUDDele
         let url = urlPrefix + theme
         
         Alamofire.request(.GET, url)
-            .responseString { _, _, string, error in
+            .responseString { _, _, result in
                 
-                if(error != nil) {
+                if(result.isFailure) {
                     NSLog("Fail to load data.")
                     self.refreshControl?.endRefreshing()
                     self.hud?.hide(true)
@@ -75,7 +75,7 @@ class TWThemesPostsTableViewController: UITableViewController, MBProgressHUDDele
                 else {
                     self.postItems.removeAll(keepCapacity: true)
                     
-                    let data = string?.dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: true)
+                    let data = result.value?.dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: true)
                     
                     let doc = TFHpple(HTMLData: data)
                     let topicNodes = doc.searchWithXPathQuery("//div[@class='cell item']")
@@ -84,7 +84,7 @@ class TWThemesPostsTableViewController: UITableViewController, MBProgressHUDDele
                     
                     for topic in topicNodes {
                         //construct model
-                        var post = PostItem()
+                        let post = PostItem()
                         
                         //post title
                         let itemTitleSpan: [AnyObject] = topic.searchWithXPathQuery("//span[@class='item_title']/a")
@@ -106,7 +106,7 @@ class TWThemesPostsTableViewController: UITableViewController, MBProgressHUDDele
                         //user avatar
                         let imgNode: [AnyObject] = topic.searchWithXPathQuery("//img[@class='avatar']")
                         aUnderSpan = imgNode.first as! TFHppleElement
-                        let imgUrl = "http:" + aUnderSpan.objectForKey("src")
+                        let imgUrl = "https:" + aUnderSpan.objectForKey("src")
                         
                         post.postTitle = title
                         post.userName = userName

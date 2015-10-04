@@ -43,15 +43,15 @@ class TWDetailTableViewController: UITableViewController{
         
         
         Alamofire.request(.GET, "https://www.v2ex.com/api/topics/show.json?id=" + String(self.mainPost!.postId!))
-        .responseJSON { (req, res, json, error)in
-            if(error != nil) {
+        .responseJSON { (req, res, result)in
+            if(result.isFailure) {
                 NSLog("Fail to load LZ data.")
             }
             else {
-                let json = JSON(json!)
-                for (index: String, subJson: JSON) in json {
-                    let content = subJson["content"].stringValue
-                    let created = subJson["created"].doubleValue
+                let json = JSON(result.value!)
+                for subJson in json {
+                    let content = subJson.1["content"].stringValue
+                    let created = subJson.1["created"].doubleValue
                     
                     self.mainPost?.postFullText = content
                     self.mainPost?.time = String(stringInterpolationSegment: created)
@@ -65,15 +65,15 @@ class TWDetailTableViewController: UITableViewController{
         
         //Http request
         Alamofire.request(.GET, "https://www.v2ex.com/api/replies/show.json?topic_id=" + String(self.mainPost!.postId!))
-            .responseJSON { (req, res, json, error)in
-                if(error != nil) {
+            .responseJSON { (req, res, result)in
+                if(result.isFailure) {
                     NSLog("Fail to load data.")
                 }
                 else {
                     NSLog("Success!")
-                    let json = JSON(json!)
-                    for (index: String, subJson: JSON) in json {
-                        let reply: PostItem = self.constructPostItem(subJson)
+                    let json = JSON(result.value!)
+                    for subJson in json {
+                        let reply: PostItem = self.constructPostItem(subJson.1)
                         self.replies.append(reply)
                     }
                     
@@ -130,7 +130,12 @@ class TWDetailTableViewController: UITableViewController{
             
             cell.title.text = mainPost!.postTitle
             cell.userName.text = mainPost!.userName
-            cell.avatar.kf_setImageWithURL(mainPost!.userAvatar!)
+            
+            let avatarUrl = mainPost!.userAvatar!
+            var s = avatarUrl.URLString
+            s.insert("s", atIndex: s.startIndex.advancedBy(4))
+            
+            cell.avatar.kf_setImageWithURL(NSURL(string: s)!)
             cell.content.text = mainPost?.postFullText
             cell.time.text = mainPost?.time
             
@@ -144,7 +149,12 @@ class TWDetailTableViewController: UITableViewController{
             
             cell.userName.text = replies[indexPath.row].userName
             cell.postText.text = replies[indexPath.row].postFullText
-            cell.userAvatar.kf_setImageWithURL(replies[indexPath.row].userAvatar!)
+            
+            let avatarUrl = replies[indexPath.row].userAvatar!
+            var s = avatarUrl.URLString
+            s.insert("s", atIndex: s.startIndex.advancedBy(4))
+            
+            cell.userAvatar.kf_setImageWithURL(NSURL(string: s)!)
             
             //LZ label hidden or not
             if cell.userName.text == mainPost?.userName {
