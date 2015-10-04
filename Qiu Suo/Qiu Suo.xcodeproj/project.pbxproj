@@ -8,9 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		45F75263F24FF187A6174C87 /* Pods_Qiu_Suo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 926B366DC573BE7DDE3C866F /* Pods_Qiu_Suo.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
-		DC255F331BC0BAFC00CBE025 /* TFHpple.m in Sources */ = {isa = PBXBuildFile; fileRef = DC255F2E1BC0BAFC00CBE025 /* TFHpple.m */; settings = {ASSET_TAGS = (); }; };
-		DC255F341BC0BAFC00CBE025 /* TFHppleElement.m in Sources */ = {isa = PBXBuildFile; fileRef = DC255F301BC0BAFC00CBE025 /* TFHppleElement.m */; settings = {ASSET_TAGS = (); }; };
-		DC255F351BC0BAFC00CBE025 /* XPathQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = DC255F321BC0BAFC00CBE025 /* XPathQuery.m */; settings = {ASSET_TAGS = (); }; };
 		DC255F371BC0BBA000CBE025 /* libxml2.2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = DC255F361BC0BBA000CBE025 /* libxml2.2.tbd */; };
 		DC665C131BC0BEE4007BE181 /* TWThemesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC665C111BC0BEE4007BE181 /* TWThemesTableViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		DC665C141BC0BEE4007BE181 /* TWThemesPostsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC665C121BC0BEE4007BE181 /* TWThemesPostsTableViewController.swift */; settings = {ASSET_TAGS = (); }; };
@@ -36,6 +33,9 @@
 		DCD1402C1BC0C5C20037AA9A /* ComprehensiveTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD140291BC0C5C20037AA9A /* ComprehensiveTableViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		DCD1402D1BC0C5C20037AA9A /* TWDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD1402A1BC0C5C20037AA9A /* TWDetailTableViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		DCD1402E1BC0C5C20037AA9A /* ExploreThemes.plist in Resources */ = {isa = PBXBuildFile; fileRef = DCD1402B1BC0C5C20037AA9A /* ExploreThemes.plist */; settings = {ASSET_TAGS = (); }; };
+		DCD140381BC0D1C30037AA9A /* TFHpple.m in Sources */ = {isa = PBXBuildFile; fileRef = DCD140331BC0D1C30037AA9A /* TFHpple.m */; settings = {ASSET_TAGS = (); }; };
+		DCD140391BC0D1C30037AA9A /* TFHppleElement.m in Sources */ = {isa = PBXBuildFile; fileRef = DCD140351BC0D1C30037AA9A /* TFHppleElement.m */; settings = {ASSET_TAGS = (); }; };
+		DCD1403A1BC0D1C30037AA9A /* XPathQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = DCD140371BC0D1C30037AA9A /* XPathQuery.m */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,12 +59,6 @@
 		071D3BCDB92C17AA5C10BC0B /* Pods-Qiu Suo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Qiu Suo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Qiu Suo/Pods-Qiu Suo.debug.xcconfig"; sourceTree = "<group>"; };
 		222BE3FC97103F31309B6A69 /* Pods-Qiu Suo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Qiu Suo.release.xcconfig"; path = "Pods/Target Support Files/Pods-Qiu Suo/Pods-Qiu Suo.release.xcconfig"; sourceTree = "<group>"; };
 		926B366DC573BE7DDE3C866F /* Pods_Qiu_Suo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Qiu_Suo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		DC255F2D1BC0BAFC00CBE025 /* TFHpple.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFHpple.h; sourceTree = "<group>"; };
-		DC255F2E1BC0BAFC00CBE025 /* TFHpple.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFHpple.m; sourceTree = "<group>"; };
-		DC255F2F1BC0BAFC00CBE025 /* TFHppleElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFHppleElement.h; sourceTree = "<group>"; };
-		DC255F301BC0BAFC00CBE025 /* TFHppleElement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFHppleElement.m; sourceTree = "<group>"; };
-		DC255F311BC0BAFC00CBE025 /* XPathQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XPathQuery.h; sourceTree = "<group>"; };
-		DC255F321BC0BAFC00CBE025 /* XPathQuery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XPathQuery.m; sourceTree = "<group>"; };
 		DC255F361BC0BBA000CBE025 /* libxml2.2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxml2.2.tbd; path = usr/lib/libxml2.2.tbd; sourceTree = SDKROOT; };
 		DC665C111BC0BEE4007BE181 /* TWThemesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TWThemesTableViewController.swift; sourceTree = "<group>"; };
 		DC665C121BC0BEE4007BE181 /* TWThemesPostsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TWThemesPostsTableViewController.swift; sourceTree = "<group>"; };
@@ -96,6 +90,13 @@
 		DCD140291BC0C5C20037AA9A /* ComprehensiveTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComprehensiveTableViewController.swift; sourceTree = "<group>"; };
 		DCD1402A1BC0C5C20037AA9A /* TWDetailTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TWDetailTableViewController.swift; sourceTree = "<group>"; };
 		DCD1402B1BC0C5C20037AA9A /* ExploreThemes.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ExploreThemes.plist; sourceTree = "<group>"; };
+		DCD140311BC0D1C20037AA9A /* Qiu Suo-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Qiu Suo-Bridging-Header.h"; sourceTree = "<group>"; };
+		DCD140321BC0D1C30037AA9A /* TFHpple.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFHpple.h; sourceTree = "<group>"; };
+		DCD140331BC0D1C30037AA9A /* TFHpple.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFHpple.m; sourceTree = "<group>"; };
+		DCD140341BC0D1C30037AA9A /* TFHppleElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFHppleElement.h; sourceTree = "<group>"; };
+		DCD140351BC0D1C30037AA9A /* TFHppleElement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFHppleElement.m; sourceTree = "<group>"; };
+		DCD140361BC0D1C30037AA9A /* XPathQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XPathQuery.h; sourceTree = "<group>"; };
+		DCD140371BC0D1C30037AA9A /* XPathQuery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XPathQuery.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,12 +147,13 @@
 		DC255F2B1BC0BA7500CBE025 /* Hpple */ = {
 			isa = PBXGroup;
 			children = (
-				DC255F2D1BC0BAFC00CBE025 /* TFHpple.h */,
-				DC255F2E1BC0BAFC00CBE025 /* TFHpple.m */,
-				DC255F2F1BC0BAFC00CBE025 /* TFHppleElement.h */,
-				DC255F301BC0BAFC00CBE025 /* TFHppleElement.m */,
-				DC255F311BC0BAFC00CBE025 /* XPathQuery.h */,
-				DC255F321BC0BAFC00CBE025 /* XPathQuery.m */,
+				DCD140321BC0D1C30037AA9A /* TFHpple.h */,
+				DCD140331BC0D1C30037AA9A /* TFHpple.m */,
+				DCD140341BC0D1C30037AA9A /* TFHppleElement.h */,
+				DCD140351BC0D1C30037AA9A /* TFHppleElement.m */,
+				DCD140361BC0D1C30037AA9A /* XPathQuery.h */,
+				DCD140371BC0D1C30037AA9A /* XPathQuery.m */,
+				DCD140311BC0D1C20037AA9A /* Qiu Suo-Bridging-Header.h */,
 			);
 			name = Hpple;
 			sourceTree = "<group>";
@@ -441,16 +443,16 @@
 			files = (
 				DC665C131BC0BEE4007BE181 /* TWThemesTableViewController.swift in Sources */,
 				DCD140131BC0C51C0037AA9A /* TWNode.swift in Sources */,
+				DCD1403A1BC0D1C30037AA9A /* XPathQuery.m in Sources */,
 				DCD140231BC0C5460037AA9A /* TWLZTableViewCell.swift in Sources */,
+				DCD140381BC0D1C30037AA9A /* TFHpple.m in Sources */,
 				DCD1402D1BC0C5C20037AA9A /* TWDetailTableViewController.swift in Sources */,
 				DCD140271BC0C5460037AA9A /* TWHeaderCollectionReusableView.swift in Sources */,
-				DC255F341BC0BAFC00CBE025 /* TFHppleElement.m in Sources */,
 				DCA6C3D51BC0AF2400A0F4AC /* ViewController.swift in Sources */,
 				DCD1401F1BC0C5460037AA9A /* TWTableViewCell.swift in Sources */,
-				DC255F351BC0BAFC00CBE025 /* XPathQuery.m in Sources */,
 				DCD1402C1BC0C5C20037AA9A /* ComprehensiveTableViewController.swift in Sources */,
+				DCD140391BC0D1C30037AA9A /* TFHppleElement.m in Sources */,
 				DCD140211BC0C5460037AA9A /* TWDetailTableViewCell.swift in Sources */,
-				DC255F331BC0BAFC00CBE025 /* TFHpple.m in Sources */,
 				DCA6C3D31BC0AF2400A0F4AC /* AppDelegate.swift in Sources */,
 				DCD140121BC0C51C0037AA9A /* PostItem.swift in Sources */,
 				DCD140251BC0C5460037AA9A /* TWNodeCollectionViewCell.swift in Sources */,
@@ -606,7 +608,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "io.github.ted005.Qiu-Suo";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "Qiu Suo-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -623,7 +625,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "io.github.ted005.Qiu-Suo";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "Qiu Suo-Bridging-Header.h";
 			};
 			name = Release;
 		};

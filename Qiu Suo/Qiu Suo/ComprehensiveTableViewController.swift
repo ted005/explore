@@ -363,7 +363,7 @@ class ComprehensiveTableViewController: UITableViewController, MBProgressHUDDele
         
         for topic in topicNodes {
             //construct model
-            var post = PostItem()
+            let post = PostItem()
             
             //post title
             let itemTitleSpan: [AnyObject] = topic.searchWithXPathQuery("//span[@class='item_title']/a")
