@@ -8,6 +8,8 @@
 
 import UIKit
 import Alamofire
+import MBProgressHUD
+import MJRefresh
 
 class TWThemesPostsTableViewController: UITableViewController, MBProgressHUDDelegate {
 
@@ -52,7 +54,7 @@ class TWThemesPostsTableViewController: UITableViewController, MBProgressHUDDele
     }
     
     func pullToRefresh() -> Void {
-        println("Refreshing......")
+        print("Refreshing......")
         
         parseHtml(theme)
         
@@ -140,7 +142,7 @@ class TWThemesPostsTableViewController: UITableViewController, MBProgressHUDDele
 
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        var cell = tableView.dequeueReusableCellWithIdentifier(cellReuseIdentifier, forIndexPath: indexPath) as! TWTableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier(cellReuseIdentifier, forIndexPath: indexPath) as! TWTableViewCell
         
         cell.userName.text = postItems[indexPath.row].userName
         cell.userPost.text = postItems[indexPath.row].postTitle
