@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		45F75263F24FF187A6174C87 /* Pods_Qiu_Suo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 926B366DC573BE7DDE3C866F /* Pods_Qiu_Suo.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		DC255F371BC0BBA000CBE025 /* libxml2.2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = DC255F361BC0BBA000CBE025 /* libxml2.2.tbd */; };
+		DC26BC9D1BC2A1830043CF81 /* Reveal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC26BC9C1BC2A1830043CF81 /* Reveal.framework */; settings = {ASSET_TAGS = (); }; };
 		DC665C131BC0BEE4007BE181 /* TWThemesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC665C111BC0BEE4007BE181 /* TWThemesTableViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		DC665C141BC0BEE4007BE181 /* TWThemesPostsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC665C121BC0BEE4007BE181 /* TWThemesPostsTableViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		DCA6C3D31BC0AF2400A0F4AC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA6C3D21BC0AF2400A0F4AC /* AppDelegate.swift */; };
@@ -66,6 +67,7 @@
 		222BE3FC97103F31309B6A69 /* Pods-Qiu Suo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Qiu Suo.release.xcconfig"; path = "Pods/Target Support Files/Pods-Qiu Suo/Pods-Qiu Suo.release.xcconfig"; sourceTree = "<group>"; };
 		926B366DC573BE7DDE3C866F /* Pods_Qiu_Suo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Qiu_Suo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC255F361BC0BBA000CBE025 /* libxml2.2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxml2.2.tbd; path = usr/lib/libxml2.2.tbd; sourceTree = SDKROOT; };
+		DC26BC9C1BC2A1830043CF81 /* Reveal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Reveal.framework; sourceTree = "<group>"; };
 		DC665C111BC0BEE4007BE181 /* TWThemesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TWThemesTableViewController.swift; sourceTree = "<group>"; };
 		DC665C121BC0BEE4007BE181 /* TWThemesPostsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TWThemesPostsTableViewController.swift; sourceTree = "<group>"; };
 		DCA6C3CF1BC0AF2400A0F4AC /* Qiu Suo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Qiu Suo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -116,6 +118,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DC26BC9D1BC2A1830043CF81 /* Reveal.framework in Frameworks */,
 				DC255F371BC0BBA000CBE025 /* libxml2.2.tbd in Frameworks */,
 				45F75263F24FF187A6174C87 /* Pods_Qiu_Suo.framework in Frameworks */,
 			);
@@ -182,6 +185,7 @@
 		DCA6C3C61BC0AF2400A0F4AC = {
 			isa = PBXGroup;
 			children = (
+				DC26BC9C1BC2A1830043CF81 /* Reveal.framework */,
 				DC255F2B1BC0BA7500CBE025 /* Hpple */,
 				DCA6C3D11BC0AF2400A0F4AC /* Qiu Suo */,
 				DCA6C3E61BC0AF2400A0F4AC /* Qiu SuoTests */,
@@ -635,9 +639,30 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks/**",
+					"$(PROJECT_DIR)",
+				);
 				HEADER_SEARCH_PATHS = "${SDKROOT}/usr/include/libxml2/**";
 				INFOPLIST_FILE = "Qiu Suo/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-framework",
+					"\"Alamofire\"",
+					"-framework",
+					"\"Kingfisher\"",
+					"-framework",
+					"\"MBProgressHUD\"",
+					"-framework",
+					"\"MJRefresh\"",
+					"-framework",
+					"\"SwiftyJSON\"",
+					"-ObjC",
+					"-lz",
+					"-framework",
+					Reveal,
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "io.github.ted005.Qiu-Suo";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Qiu Suo-Bridging-Header.h";
@@ -652,6 +677,10 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks/**",
+					"$(PROJECT_DIR)",
+				);
 				HEADER_SEARCH_PATHS = "${SDKROOT}/usr/include/libxml2/**";
 				INFOPLIST_FILE = "Qiu Suo/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
