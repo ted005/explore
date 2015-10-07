@@ -15,8 +15,59 @@
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="路漫漫其修远兮，吾将上下而求索。" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WXB-6P-eta">
+                                <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="屈原 《离骚》" textAlignment="justified" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LYy-hO-VWQ">
+                                <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <animations/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="LYy-hO-VWQ" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="DUr-gu-cqq"/>
+                            <constraint firstItem="LYy-hO-VWQ" firstAttribute="trailing" secondItem="WXB-6P-eta" secondAttribute="trailing" id="Hth-Ye-Gm3"/>
+                            <constraint firstItem="WXB-6P-eta" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="hio-TB-gwq"/>
+                            <constraint firstItem="LYy-hO-VWQ" firstAttribute="top" secondItem="WXB-6P-eta" secondAttribute="bottom" constant="32" id="i2q-Bu-vlA">
+                                <variation key="heightClass=regular-widthClass=compact" constant="30"/>
+                            </constraint>
+                            <constraint firstItem="WXB-6P-eta" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="j6P-pb-GyX"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="WXB-6P-eta"/>
+                                <exclude reference="LYy-hO-VWQ"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="hio-TB-gwq"/>
+                                <exclude reference="j6P-pb-GyX"/>
+                                <exclude reference="DUr-gu-cqq"/>
+                                <exclude reference="Hth-Ye-Gm3"/>
+                                <exclude reference="i2q-Bu-vlA"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="WXB-6P-eta"/>
+                                <include reference="LYy-hO-VWQ"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="hio-TB-gwq"/>
+                                <include reference="j6P-pb-GyX"/>
+                                <exclude reference="DUr-gu-cqq"/>
+                                <include reference="Hth-Ye-Gm3"/>
+                                <include reference="i2q-Bu-vlA"/>
+                            </mask>
+                        </variation>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
